@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enhanced Room Cards - Tailwind Example</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 min-h-screen p-8 transition-colors duration-300">
+
+  <!-- Dark Mode Toggle -->
+  <div class="max-w-7xl mx-auto mb-8 flex justify-between items-center">
+    <h1 class="text-3xl font-bold text-gray-900 dark:text-white">Enhanced Room Cards</h1>
+    <button onclick="document.documentElement.classList.toggle('dark')"
+            class="bg-gray-800 dark:bg-gray-200 text-white dark:text-gray-900 px-4 py-2 rounded-lg font-semibold hover:scale-105 transition-transform">
+      Toggle Dark Mode
+    </button>
+  </div>
+
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <!-- Card 1: Active Room with Players -->
+    <div class="group bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-200 dark:border-gray-700 hover:scale-105 hover:-translate-y-1">
+
+      <!-- Status Badge -->
+      <div class="relative">
+        <div class="absolute top-4 right-4 z-10">
+          <span class="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg flex items-center gap-1">
+            <span class="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+            Active
+          </span>
+        </div>
+
+        <!-- Header with gradient -->
+        <div class="bg-gradient-to-br from-blue-500 to-purple-600 p-6 pb-12">
+          <h2 class="text-2xl font-bold text-white">High Rollers</h2>
+          <p class="text-blue-100 text-sm mt-1">Texas Hold'em</p>
+        </div>
+      </div>
+
+      <!-- Card Body -->
+      <div class="p-6 -mt-6 relative">
+
+        <!-- Players Avatars (Overlapping) -->
+        <div class="flex -space-x-3 mb-4">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-red-400 to-red-600 border-2 border-white dark:border-gray-800 flex items-center justify-center text-white font-bold text-sm shadow-lg">
+            JD
+          </div>
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 border-2 border-white dark:border-gray-800 flex items-center justify-center text-white font-bold text-sm shadow-lg">
+            AM
+          </div>
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-400 to-green-600 border-2 border-white dark:border-gray-800 flex items-center justify-center text-white font-bold text-sm shadow-lg">
+            SK
+          </div>
+          <div class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 border-2 border-white dark:border-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-400 font-bold text-xs shadow-lg">
+            +2
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-2 gap-4 mb-4">
+          <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-3">
+            <p class="text-xs text-gray-500 dark:text-gray-400">Min Blind</p>
+            <p class="text-lg font-bold text-gray-900 dark:text-white">$100</p>
+          </div>
+          <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-3">
+            <p class="text-xs text-gray-500 dark:text-gray-400">Players</p>
+            <p class="text-lg font-bold text-gray-900 dark:text-white">5/8</p>
+          </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="mb-4">
+          <div class="flex justify-between text-xs text-gray-600 dark:text-gray-400 mb-1">
+            <span>Table Capacity</span>
+            <span>62%</span>
+          </div>
+          <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
+            <div class="bg-gradient-to-r from-blue-500 to-purple-600 h-2 rounded-full transition-all duration-500" style="width: 62%"></div>
+          </div>
+        </div>
+
+        <!-- Join Button -->
+        <button class="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-3 rounded-lg shadow-lg transform group-hover:scale-105 transition-all duration-200">
+          Join Room
+        </button>
+      </div>
+    </div>
+
+    <!-- Card 2: Full Room -->
+    <div class="group bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-200 dark:border-gray-700 hover:scale-105 hover:-translate-y-1">
+
+      <div class="relative">
+        <div class="absolute top-4 right-4 z-10">
+          <span class="bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+            Full
+          </span>
+        </div>
+
+        <div class="bg-gradient-to-br from-red-500 to-orange-600 p-6 pb-12">
+          <h2 class="text-2xl font-bold text-white">VIP Lounge</h2>
+          <p class="text-red-100 text-sm mt-1">No Limit</p>
+        </div>
+      </div>
+
+      <div class="p-6 -mt-6 relative">
+
+        <div class="flex -space-x-3 mb-4">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 border-2 border-white dark:border-gray-800 flex items-center justify-center text-white font-bold text-sm shadow-lg">
+            PK
+          </div>
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-pink-400 to-pink-600 border-2 border-white dark:border-gray-800 flex items-center justify-center text-white font-bold text-sm shadow-lg">
+            LM
+          </div>
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 border-2 border-white dark:border-gray-800 flex items-center justify-center text-white font-bold text-sm shadow-lg">
+            TR
+          </div>
+          <div class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 border-2 border-white dark:border-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-400 font-bold text-xs shadow-lg">
+            +5
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 mb-4">
+          <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-3">
+            <p class="text-xs text-gray-500 dark:text-gray-400">Min Blind</p>
+            <p class="text-lg font-bold text-gray-900 dark:text-white">$500</p>
+          </div>
+          <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-3">
+            <p class="text-xs text-gray-500 dark:text-gray-400">Players</p>
+            <p class="text-lg font-bold text-gray-900 dark:text-white">8/8</p>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <div class="flex justify-between text-xs text-gray-600 dark:text-gray-400 mb-1">
+            <span>Table Capacity</span>
+            <span>100%</span>
+          </div>
+          <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
+            <div class="bg-gradient-to-r from-red-500 to-orange-600 h-2 rounded-full" style="width: 100%"></div>
+          </div>
+        </div>
+
+        <button disabled class="w-full bg-gray-400 dark:bg-gray-600 text-gray-200 dark:text-gray-400 font-bold py-3 rounded-lg cursor-not-allowed">
+          Room Full
+        </button>
+      </div>
+    </div>
+
+    <!-- Card 3: Waiting Room (Loading State) -->
+    <div class="group bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-200 dark:border-gray-700 hover:scale-105 hover:-translate-y-1">
+
+      <div class="relative">
+        <div class="absolute top-4 right-4 z-10">
+          <span class="bg-yellow-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg flex items-center gap-1">
+            <span class="w-2 h-2 bg-white rounded-full animate-ping"></span>
+            Waiting
+          </span>
+        </div>
+
+        <div class="bg-gradient-to-br from-green-500 to-teal-600 p-6 pb-12">
+          <h2 class="text-2xl font-bold text-white">Beginners Table</h2>
+          <p class="text-green-100 text-sm mt-1">Low Stakes</p>
+        </div>
+      </div>
+
+      <div class="p-6 -mt-6 relative">
+
+        <div class="flex -space-x-3 mb-4">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-teal-400 to-teal-600 border-2 border-white dark:border-gray-800 flex items-center justify-center text-white font-bold text-sm shadow-lg">
+            NB
+          </div>
+          <div class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 border-2 border-white dark:border-gray-800 animate-pulse"></div>
+          <div class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 border-2 border-white dark:border-gray-800 animate-pulse"></div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 mb-4">
+          <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-3">
+            <p class="text-xs text-gray-500 dark:text-gray-400">Min Blind</p>
+            <p class="text-lg font-bold text-gray-900 dark:text-white">$10</p>
+          </div>
+          <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-3">
+            <p class="text-xs text-gray-500 dark:text-gray-400">Players</p>
+            <p class="text-lg font-bold text-gray-900 dark:text-white">1/6</p>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <div class="flex justify-between text-xs text-gray-600 dark:text-gray-400 mb-1">
+            <span>Table Capacity</span>
+            <span>17%</span>
+          </div>
+          <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
+            <div class="bg-gradient-to-r from-green-500 to-teal-600 h-2 rounded-full transition-all duration-500" style="width: 17%"></div>
+          </div>
+        </div>
+
+        <button class="w-full bg-gradient-to-r from-green-600 to-teal-600 hover:from-green-700 hover:to-teal-700 text-white font-bold py-3 rounded-lg shadow-lg transform group-hover:scale-105 transition-all duration-200">
+          Join Room
+        </button>
+      </div>
+    </div>
+
+    <!-- Card 4: Skeleton Loading State -->
+    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-200 dark:border-gray-700 animate-pulse">
+
+      <div class="bg-gray-300 dark:bg-gray-700 p-6 pb-12">
+        <div class="h-6 bg-gray-400 dark:bg-gray-600 rounded w-3/4 mb-2"></div>
+        <div class="h-4 bg-gray-400 dark:bg-gray-600 rounded w-1/2"></div>
+      </div>
+
+      <div class="p-6 -mt-6 relative">
+
+        <div class="flex -space-x-3 mb-4">
+          <div class="w-10 h-10 rounded-full bg-gray-300 dark:bg-gray-700 border-2 border-white dark:border-gray-800"></div>
+          <div class="w-10 h-10 rounded-full bg-gray-300 dark:bg-gray-700 border-2 border-white dark:border-gray-800"></div>
+          <div class="w-10 h-10 rounded-full bg-gray-300 dark:bg-gray-700 border-2 border-white dark:border-gray-800"></div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 mb-4">
+          <div class="bg-gray-100 dark:bg-gray-700 rounded-lg p-3">
+            <div class="h-3 bg-gray-300 dark:bg-gray-600 rounded w-1/2 mb-2"></div>
+            <div class="h-5 bg-gray-300 dark:bg-gray-600 rounded w-3/4"></div>
+          </div>
+          <div class="bg-gray-100 dark:bg-gray-700 rounded-lg p-3">
+            <div class="h-3 bg-gray-300 dark:bg-gray-600 rounded w-1/2 mb-2"></div>
+            <div class="h-5 bg-gray-300 dark:bg-gray-600 rounded w-3/4"></div>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <div class="h-3 bg-gray-300 dark:bg-gray-600 rounded w-full mb-2"></div>
+          <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2"></div>
+        </div>
+
+        <div class="h-12 bg-gray-300 dark:bg-gray-600 rounded-lg"></div>
+      </div>
+    </div>
+
+    <!-- Card 5: Premium Room with Special Effects -->
+    <div class="group bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-yellow-400 dark:border-yellow-500 hover:scale-105 hover:-translate-y-1 relative">
+
+      <!-- Premium Badge -->
+      <div class="absolute -top-2 -right-2 z-20">
+        <div class="bg-yellow-400 text-yellow-900 text-xs font-bold px-3 py-1 rounded-full shadow-lg transform rotate-12">
+          ⭐ PREMIUM
+        </div>
+      </div>
+
+      <div class="relative">
+        <div class="absolute top-4 right-4 z-10">
+          <span class="bg-purple-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg flex items-center gap-1">
+            <span class="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+            Active
+          </span>
+        </div>
+
+        <div class="bg-gradient-to-br from-yellow-500 via-orange-500 to-red-500 p-6 pb-12">
+          <h2 class="text-2xl font-bold text-white">Diamond Elite</h2>
+          <p class="text-yellow-100 text-sm mt-1">Ultra High Stakes</p>
+        </div>
+      </div>
+
+      <div class="p-6 -mt-6 relative">
+
+        <div class="flex -space-x-3 mb-4">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 border-2 border-white dark:border-gray-800 flex items-center justify-center text-white font-bold text-sm shadow-lg">
+            VIP
+          </div>
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 border-2 border-white dark:border-gray-800 flex items-center justify-center text-white font-bold text-sm shadow-lg">
+            PRO
+          </div>
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-red-400 to-red-600 border-2 border-white dark:border-gray-800 flex items-center justify-center text-white font-bold text-sm shadow-lg">
+            ACE
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 mb-4">
+          <div class="bg-gradient-to-br from-yellow-50 to-orange-50 dark:from-gray-700 dark:to-gray-600 rounded-lg p-3">
+            <p class="text-xs text-gray-600 dark:text-gray-400">Min Blind</p>
+            <p class="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-orange-600 dark:from-yellow-400 dark:to-orange-400">$5,000</p>
+          </div>
+          <div class="bg-gradient-to-br from-yellow-50 to-orange-50 dark:from-gray-700 dark:to-gray-600 rounded-lg p-3">
+            <p class="text-xs text-gray-600 dark:text-gray-400">Players</p>
+            <p class="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-orange-600 dark:from-yellow-400 dark:to-orange-400">3/4</p>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <div class="flex justify-between text-xs text-gray-600 dark:text-gray-400 mb-1">
+            <span>Table Capacity</span>
+            <span>75%</span>
+          </div>
+          <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
+            <div class="bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500 h-2 rounded-full transition-all duration-500" style="width: 75%"></div>
+          </div>
+        </div>
+
+        <button class="w-full bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500 hover:from-yellow-600 hover:via-orange-600 hover:to-red-600 text-white font-bold py-3 rounded-lg shadow-lg transform group-hover:scale-105 transition-all duration-200">
+          Join Premium Room
+        </button>
+      </div>
+    </div>
+
+    <!-- Card 6: Tournament Room -->
+    <div class="group bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-200 dark:border-gray-700 hover:scale-105 hover:-translate-y-1">
+
+      <div class="relative">
+        <div class="absolute top-4 right-4 z-10">
+          <span class="bg-indigo-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+            🏆 Tournament
+          </span>
+        </div>
+
+        <div class="bg-gradient-to-br from-indigo-500 to-purple-600 p-6 pb-12">
+          <h2 class="text-2xl font-bold text-white">Friday Night</h2>
+          <p class="text-indigo-100 text-sm mt-1">Starts in 15 min</p>
+        </div>
+      </div>
+
+      <div class="p-6 -mt-6 relative">
+
+        <div class="flex -space-x-3 mb-4">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-400 to-indigo-600 border-2 border-white dark:border-gray-800 flex items-center justify-center text-white font-bold text-sm shadow-lg">
+            T1
+          </div>
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 border-2 border-white dark:border-gray-800 flex items-center justify-center text-white font-bold text-sm shadow-lg">
+            T2
+          </div>
+          <div class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 border-2 border-white dark:border-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-400 font-bold text-xs shadow-lg">
+            +8
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 mb-4">
+          <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-3">
+            <p class="text-xs text-gray-500 dark:text-gray-400">Buy-in</p>
+            <p class="text-lg font-bold text-gray-900 dark:text-white">$250</p>
+          </div>
+          <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-3">
+            <p class="text-xs text-gray-500 dark:text-gray-400">Prize Pool</p>
+            <p class="text-lg font-bold text-green-600 dark:text-green-400">$2,500</p>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <div class="flex justify-between text-xs text-gray-600 dark:text-gray-400 mb-1">
+            <span>Registered</span>
+            <span>10/20</span>
+          </div>
+          <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
+            <div class="bg-gradient-to-r from-indigo-500 to-purple-600 h-2 rounded-full transition-all duration-500" style="width: 50%"></div>
+          </div>
+        </div>
+
+        <button class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-bold py-3 rounded-lg shadow-lg transform group-hover:scale-105 transition-all duration-200">
+          Register Now
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

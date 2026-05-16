@@ -1,0 +1,54 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: poker_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: poker_user
+      POSTGRES_PASSWORD: poker_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - poker_pg_data:/var/lib/postgresql/data
+    networks:
+      - poker_net
+
+  backend:
+    build:
+      context: ./backend
+    container_name: poker_backend
+    restart: unless-stopped
+    depends_on:
+      - postgres
+    environment:
+      PORT: 3000
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USER: poker_user
+      DB_PASSWORD: poker_password
+      DB_NAME: poker_db
+      JWT_SECRET: my-secret
+    ports:
+      - "3000:3000"
+    networks:
+      - poker_net
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        VITE_API_URL: http://localhost:3000
+    container_name: poker_frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "5173:80"
+    networks:
+      - poker_net
+
+volumes:
+  poker_pg_data:
+
+networks:
+  poker_net:
