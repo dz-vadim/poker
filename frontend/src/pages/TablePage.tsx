@@ -37,9 +37,9 @@ function TablePage() {
     const handleCall  = () => {
         console.log("call", gameState.currentBet);
     }
-    const handleAllIn = () => {
-        console.log("all-in");
-    }
+    // const handleAllIn = () => {
+    //     console.log("all-in");
+    // }
 
     const getCardSymbol = (card: Card) => {
         const suits: {[key: string]: string} = {
